@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Score</title>
+    <link rel="stylesheet" href="/stylesheets/score-style.css">
+</head>
+<body>
+    <h1>Finished With Quiz!</h1>
+    <br>
+    <h3>Your Final Score is: <%= score %>/<%= quiz.length %></h3>
+    <h3>Your Total Score over all cumulative games is <%= totalScore %></h3>
+    <div class="score-grid">
+        <% for( let index = 0; index < allGameScores.length; index++ ) { %>
+            <div class="score-item">
+            <h5>Game <%= index + 1 %>: <%= allGameScores[index] %></h5>
+            </div>
+        <% } %>
+    </div>
+    <a href="/" class="play-again">Play Again</a>
+</body>
+</html>

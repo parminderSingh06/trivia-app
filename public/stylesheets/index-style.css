@@ -1,0 +1,72 @@
+/* Reset default margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Center the form vertically and horizontally */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222; /* Dark background */
+}
+
+/* Style for the form */
+#quizForm {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #333; /* Darker background */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Darker and more pronounced shadow */
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #ff6b6b; /* Vibrant cyberpunk red */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ddd; /* Lighter text */
+}
+
+input[type="number"], select {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #555; /* Darker border */
+    border-radius: 5px;
+    background-color: #444; /* Dark input background */
+    color: #eee; /* Light input text */
+}
+
+button[type="submit"] {
+    background-color: #ffcc29; /* Vibrant cyberpunk yellow */
+    color: #222; /* Dark text */
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6b6b; ; /* Darker hover color */
+}
+
+#numQuestions{
+    width: 360px;
+}

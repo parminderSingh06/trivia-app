@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Good Luck!</title>
+    <link rel="stylesheet" href="/stylesheets/quiz-style.css">
+</head>
+<body>
+    <h2>Question: <%= currentQuestionIndex + 1%> / <%= quiz.length %></h3>
+    <h2><%- quiz[currentQuestionIndex].question %></h2>
+    <% if (correctOrNot !== undefined) { %>
+        <div>
+            <% if (correctOrNot) { %>
+                <h3 id="correct-answer">Nice. <%= submittedAnswer %> is the correct answer!</h3>
+            <% } else { %>
+                <h3 id="incorrect-answer">Incorrect. The correct answer is <%= quiz[currentQuestionIndex].correct_answer %>.</h3>
+            <% }%>  
+        </div>
+        <div>
+            <form action="/next-question" method="GET">
+                <button type="submit">Next Question</button>
+            </form>
+        </div>
+    <% }else{ %>
+    <form action="/answer-submit" method="POST">
+        <% 
+            const answerChoices = [quiz[currentQuestionIndex].correct_answer, ...quiz[currentQuestionIndex].incorrect_answers].sort();
+        %>
+        <div class="question-choices">
+        <%for(let i = 0; i < answerChoices.length; i++){ %>
+            <div class="choices">
+                <input type="radio" id="answerChoices<%= i %>" name="answer" value="<%= answerChoices[i] %>" required>
+                <label for="answerChoices<%= i %>"><%- answerChoices[i] %></label>
+            </div>
+        <% } %>
+        </div>
+        <div class="sub-btn">
+            <button type="submit">Submit Answer</button>
+        </div>
+    </form>
+    <% } %>
+</body>
+</html>
