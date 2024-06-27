@@ -1,22 +1,19 @@
-/* Reset default margin and padding */
 body, html {
     margin: 0;
     padding: 0;
 }
 
-/* Center content vertically and horizontally */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
-    background-color: #222; /* Optional: Set a background color */
-    font-family: Arial, sans-serif; /* Optional: Choose a readable font */
+    background-color: #222; 
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* Container for content */
 .container {
     max-width: 600px;
     padding: 20px;
@@ -27,7 +24,7 @@ body {
 
 h1 {
     margin-top: 0;
-    color:beige;
+    color: beige;
 }
 
 h3 {
@@ -54,39 +51,38 @@ a:hover {
     background-color: #ff6b6b;
 }
 
-/* Flexbox for centering and column grid */
 .score-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust spacing between items */
+    gap: 10px;
     justify-content: center;
 }
 
-/* Each score item */
 .score-item {
-    width: calc(25% - 10px); /* 25% width with gap subtracted */
+    flex: 1 1 calc(25% - 10px);
     padding: 10px;
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .score-item {
-        width: calc(50% - 10px); /* 50% width for smaller screens */
+        flex: 1 1 calc(50% - 10px);
     }
 }
 
 @media (max-width: 480px) {
     .score-item {
-        width: 100%; /* Full width on very small screens */
+        flex: 1 1 100%;
     }
 }
 
-/* Styling for play again link */
-.play-again{
+.play-again {
     display: block;
     margin-top: 20px;
     text-align: center;
@@ -95,11 +91,11 @@ a:hover {
     color: #333;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.score-item:hover{
+.score-item:hover {
     background-color: #ffcc29;
 }

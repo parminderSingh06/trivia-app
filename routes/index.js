@@ -7,6 +7,7 @@ let quiz = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let correctOrNot = undefined;
+let previousAnswer = '';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,38 +31,52 @@ router.post('/form-submit', async function(req, res, next){
     quiz = apiResponse.data.results;
     currentQuestionIndex = 0;
     score = 0;
-    res.render('quiz', { quiz, currentQuestionIndex, score, correctOrNot});
+    res.redirect('/quiz');
   } catch (error) {
     console.error('Error fetching quiz data:', error);
     res.status(500).send('Error fetching quiz data');
   }
 });
 
+//GET quiz question
+router.get('/quiz', (req,res,next)=>{
+  res.render('quiz', { quiz, currentQuestionIndex, score, correctOrNot});
+});
+
+//GET new quiz
+router.get('/quiz-continued', (req,res,next)=>{
+  res.render('quiz', {previousAnswer, correctOrNot, currentQuestionIndex, quiz, score});
+});
+
 //POST answer question
 router.post('/answer-submit', function(req, res, next){
   const correctAnswer = quiz[currentQuestionIndex].correct_answer;
-  const submittedAnswer = req.body.answer;
-  console.log(correctAnswer + "---" + submittedAnswer);
-  if(submittedAnswer === correctAnswer){
+  previousAnswer = req.body.answer;
+  if(previousAnswer === correctAnswer){
     score++;
     correctOrNot=true;
   }else{correctOrNot=false;}
-  res.render('quiz', {submittedAnswer, correctOrNot, currentQuestionIndex, quiz, score})
+  res.redirect("/quiz-continued");
 });
 
 //GET next question
 router.get('/next-question',function(req, res, next){
-  currentQuestionIndex++;
   correctOrNot = undefined;
+  currentQuestionIndex++;
   if(currentQuestionIndex >= quiz.length){
     helperFunctions.updateTotalScore(score);
-    const totalScore = helperFunctions.getTotalScore();
-    const allGameScores = helperFunctions.getAllGameScores();
-    res.render('score', {score, quiz, totalScore, allGameScores});
+    res.redirect('/final-scores');
     score = 0;
   }else{
     res.render('quiz',{quiz, currentQuestionIndex, score, correctOrNot});
   }
+});
+
+//GET final scores
+router.get('/final-scores',(req,res,next)=>{
+  const totalScore = helperFunctions.getTotalScore();
+  const allGameScores = helperFunctions.getAllGameScores();
+  res.render('score', {score, quiz, totalScore, allGameScores});
 });
 
 module.exports = router;

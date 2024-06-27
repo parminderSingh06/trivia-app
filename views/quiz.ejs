@@ -12,7 +12,7 @@
     <% if (correctOrNot !== undefined) { %>
         <div>
             <% if (correctOrNot) { %>
-                <h3 id="correct-answer">Nice. <u><%- submittedAnswer %></u> is the correct answer!</h3>
+                <h3 id="correct-answer">Nice. <u><%- previousAnswer %></u> is the correct answer!</h3>
             <% } else { %>
                 <h3 id="incorrect-answer">Incorrect. The correct answer is <u><%- quiz[currentQuestionIndex].correct_answer %></u>.</h3>
             <% }%>  
@@ -23,7 +23,7 @@
             </form>
         </div>
     <% }else{ %>
-    <form action="/answer-submit" method="POST">
+    <form action="/answer-submit?submitted=true" method="POST">
         <% 
             const answerChoices = [quiz[currentQuestionIndex].correct_answer, ...quiz[currentQuestionIndex].incorrect_answers].sort();
         %>

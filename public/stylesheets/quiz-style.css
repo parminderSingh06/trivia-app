@@ -1,14 +1,14 @@
-/* Reset default margin and padding */
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #222; /* Dark background */
-    color: #eee; /* Light text */
+    background-color: #222; 
+    color: #eee; 
 }
 
-/* Center the form vertically and horizontally */
+
 body {
     display: flex;
     justify-content: center;
@@ -17,20 +17,20 @@ body {
     height: 100vh;
 }
 
-/* Style for the form */
+
 #quizForm {
     max-width: 600px;
     padding: 20px;
-    background-color: #333; /* Darker background */
+    background-color: #333; 
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Darker and more pronounced shadow */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); 
 }
 
 h1 {
     text-align: center;
     font-size: 32px;
     margin-bottom: 30px;
-    color: #ff6b6b; /* Vibrant cyberpunk red */
+    color: #ff6b6b; 
 }
 
 .form-group {
@@ -41,23 +41,23 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #ddd; /* Lighter text */
+    color: #ddd; 
 }
 
 input[type="number"], 
 select {
-    width: calc(100% - 30px); /* Adjusted width to match other form elements */
+    width: calc(100% - 30px); 
     padding: 15px;
     font-size: 18px;
-    border: 1px solid #555; /* Darker border */
+    border: 1px solid #555;
     border-radius: 5px;
-    background-color: #444; /* Dark input background */
-    color: #eee; /* Light input text */
+    background-color: #444; 
+    color: #eee;
 }
 
 button[type="submit"] {
-    background-color: #ffcc29; /* Vibrant cyberpunk yellow */
-    color: #222; /* Dark text */
+    background-color: #ffcc29; 
+    color: #222; 
     padding: 15px 25px;
     border: none;
     border-radius: 5px;
@@ -67,14 +67,14 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #ff6b6b; /* Darker hover color */
+    background-color: #ff6b6b; 
 }
 
-/* Additional Styles for Radio Buttons and Choices */
+
 .question-choices {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px; /* Gap between grid items */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .choice {
@@ -89,23 +89,23 @@ input[type="radio"] {
 label {
     display: block;
     padding: 12px;
-    background-color: #333; /* Dark background for choices */
-    border: 1px solid #555; /* Darker border */
+    background-color: #333; 
+    border: 1px solid #555; 
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
-    color: #eee; /* Light text */
+    color: #eee; 
 }
 
 label:hover {
-    background-color: #444; /* Darker hover */
+    background-color: #444;
 }
 
 input[type="radio"]:checked + label {
-    background-color: #ffcc29; /* Vibrant cyberpunk yellow for selected */
-    color: #222; /* Dark text */
-    border-color: #ffcc29; /* Matching border color */
+    background-color: #ffcc29; 
+    color: #222;
+    border-color: #ffcc29; 
 }
 
 .sub-btn {
@@ -115,7 +115,7 @@ input[type="radio"]:checked + label {
 }
 
 .sub-btn button {
-    background-color: #ffcc29; /* Cyberpunk green */
+    background-color: #ffcc29; 
     color: #222;
     padding: 12px 20px;
     border: none;
@@ -125,7 +125,7 @@ input[type="radio"]:checked + label {
 }
 
 .sub-btn button:hover {
-    background-color: #ff6b6b;; /* Darker hover */
+    background-color: #ff6b6b;; 
 }
 
 #correct-answer{
