@@ -12,9 +12,9 @@
     <% if (correctOrNot !== undefined) { %>
         <div>
             <% if (correctOrNot) { %>
-                <h3 id="correct-answer">Nice. <%= submittedAnswer %> is the correct answer!</h3>
+                <h3 id="correct-answer">Nice. <u><%- submittedAnswer %></u> is the correct answer!</h3>
             <% } else { %>
-                <h3 id="incorrect-answer">Incorrect. The correct answer is <%= quiz[currentQuestionIndex].correct_answer %>.</h3>
+                <h3 id="incorrect-answer">Incorrect. The correct answer is <u><%- quiz[currentQuestionIndex].correct_answer %></u>.</h3>
             <% }%>  
         </div>
         <div>

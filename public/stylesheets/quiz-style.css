@@ -129,9 +129,11 @@ input[type="radio"]:checked + label {
 }
 
 #correct-answer{
-    color: rgb(13, 255, 0);
+    color: rgb(100, 222, 144);
+    font-size: 28px;
 }
 
 #incorrect-answer{
-    color: rgb(255, 1, 1);
+    color: rgb(232, 87, 87);
+    font-size: 28px;
 }
